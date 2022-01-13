@@ -1,31 +1,29 @@
 #!/bin/sh
 
-/root/bin/git config --global user.name sanghoon0517
-/root/bin/git config --global user.email jsh940517@daum.net
-/root/bin/git config --global user.mail jsh940517@daum.net
-/root/bin/git config --list > /root/silk/Bash_Crontab_Test/git_id_check
+/usr/local/cpanel/3rdparty/lib/path-bin/git config --global user.name sanghoon0517
+/usr/local/cpanel/3rdparty/lib/path-bin/git config --global user.email jsh940517@daum.net
+/usr/local/cpanel/3rdparty/lib/path-bin/git config --global user.mail jsh940517@daum.net
+/usr/local/cpanel/3rdparty/lib/path-bin/git config --list > /home/youngtec/git/Bash_Crontab_Test/git_id_check
 
-cd /root/silk/Bash_Crontab_Test/
+cd /home/youngtec/git/Bash_Crontab_Test/
 
-/root/bin/git add .
+/usr/local/cpanel/3rdparty/lib/path-bin/git add .
 
-/root/bin/git checkout -b main
+/usr/local/cpanel/3rdparty/lib/path-bin/git checkout -b main
 
-if [ "$(cat /root/silk/Bash_Crontab_Test/test.txt | wc -l)" -gt 30 ]; then
-        sed -i '1,30d' /root/silk/Bash_Crontab_Test/test.txt
+if [ "$(cat /home/youngtec/git/Bash_Crontab_Test/test.txt | wc -l)" -gt 30 ]; then
+        sed -i '1,30d' /home/youngtec/git/Bash_Crontab_Test/test.txt
 fi
 
 
-echo $(date) >> /root/silk/Bash_Crontab_Test/test.txt
+echo $(date) >> /home/youngtec/git/Bash_Crontab_Test/test.txt
 
-/root/bin/git add .
+/usr/local/cpanel/3rdparty/lib/path-bin/git add .
 
 eval $(ssh-agent -s)
 
-ssh-add ~/.ssh/jsh
+ssh-add /home/youngtec/git/jsh
 
-/root/bin/git commit -am "$(date) commit test" 
+/usr/local/cpanel/3rdparty/lib/path-bin/git commit -am "$(date) commit test"
 
-/root/bin/git push --set-upstream origin main
-
-
+/usr/local/cpanel/3rdparty/lib/path-bin/git push --set-upstream origin main
