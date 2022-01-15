@@ -1,6 +1,9 @@
 user.name=sanghoon0517
 user.mail=jsh940517@daum.net
 user.email=jsh940517@daum.net
+pack.windowmemory=100m
+pack.packsizelimit=100m
+pack.threads=1
 core.repositoryformatversion=0
 core.filemode=true
 core.bare=false
